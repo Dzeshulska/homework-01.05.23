@@ -1,10 +1,22 @@
 from selenium import webdriver
 
-driver = webdriver.Firefox()
-driver.get("http://www.google.com")
+from selenium.webdriver.common.keys import Keys
 
-elem = driver.find_element_by_name("q")
-elem.send_keys("Hello WebDriver!")
-elem.submit()
+import time
 
-print(driver.title)
+#set chromodriver.exe path
+
+driver = webdriver.Chrome(executable_path="C:\chromedriver.exe")
+
+driver.implicitly_wait(0.5)
+
+#launch URL
+
+driver.get("https://www.rozetka.ua")
+
+time.sleep(10)
+
+browser = webdriver.Chrome('/path/to/chromedriver')
+browser.get('your/website/url')
+button = browser.find_element_by_css_selector('button.v-btn.theme--light.primary')
+button.click()
