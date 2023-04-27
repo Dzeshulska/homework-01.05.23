@@ -12,15 +12,16 @@ driver = webdriver.Chrome(executable_path="C:\chromedriver.exe")
 
 driver.implicitly_wait(0.5)
 
-#launch URL
+#launch URL(поиск элемента на странице по XPATH)
 
 driver.get("https://www.rozetka.ua")
-
+elem = driver.find_element(By.XPATH,  '/html/body/app-root/div/div/rz-header/rz-main-header/header/div/div/div/form/div/div/input')
+print(elem)
+elem.send_keys('samsung')
 time.sleep(10)
 
-text_input = driver.find_element(By.ID, "textInput")
-ActionChains(driver)\
-      .send_keys_to_element(text_input, "samsung")\
-      .perform()
 
-time.sleep(20)
+
+
+
+
